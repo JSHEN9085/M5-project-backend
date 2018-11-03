@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :messages
 	has_many :subscriptions
 	has_many :chats, through: :subscriptions
+  has_many :created_chat, :class_name => "Chat", :foreign_key => "creator_id"
 
 end
 
