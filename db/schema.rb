@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2018_10_31_155422) do
     t.string "firstname"
     t.string "lastname"
     t.string "email"
-    t.string "password"
+    t.string "password_digest"
     t.string "large_picture"
     t.string "medium_picture"
     t.string "small_picture"

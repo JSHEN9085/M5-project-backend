@@ -27,6 +27,12 @@
 # Message.create!(content: "testing", user_id: 5, chat_id:1)
 # Message.create!(content: "testing", user_id: 5, chat_id:1)
 # Message.create!(content: "testing", user_id: 5, chat_id:1)
+# Message.create!(content: "testing", user_id: 1, chat_id:15)
+# Message.create!(content: "testing", user_id: 2, chat_id:15)
+# Message.create!(content: "testing", user_id: 1, chat_id:15)
+# Message.create!(content: "testing", user_id: 2, chat_id:15)
+# Message.create!(content: "testing", user_id: 1, chat_id:15)
+
 #
 # Chat.create!(topic: "testingroom1", creator_id: 1)
 # Chat.create!(topic: "testingroom2", creator_id: 1)
@@ -40,6 +46,8 @@
 # Subscription.create!(user_id: 1, chat_id:2)
 # Subscription.create!(user_id: 2, chat_id:2)
 # Subscription.create!(user_id: 3, chat_id:2)
+# Subscription.create!(user_id: 1, chat_id:15)
+# Subscription.create!(user_id: 2, chat_id:15)
 
 require 'rubygems'
 require 'httparty'
@@ -47,11 +55,11 @@ require 'httparty'
 # response = HTTParty.get('https://randomuser.me/api/?results=5')
 #
 # response["results"].each do |user|
-#   User.create(
-#     firstname: user["name"]["first"],
-#     lastname: user["name"]["last"],
+#   User.create!(
+#     firstname: user["name"]["first"].capitalize,
+#     lastname: user["name"]["last"].capitalize,
 #     email: user["email"],
-#     password: "1",
+#     password_digest: "1",
 #     large_picture: user["picture"]["large"],
 #     medium_picture: user["picture"]["medium"],
 #     small_picture: user["picture"]["thumbnail"],

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     end
 
   resources :users
+  post '/login', to: 'auth#create'
 
   mount ActionCable.server => '/cable'
 

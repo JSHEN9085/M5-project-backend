@@ -3,11 +3,23 @@ class User < ApplicationRecord
   # has_many :friends, through: :friendships
   # has_many :inverse_friendships, :class_name => "Friendship", :foreign_key => "friend_id"
   # has_many :inverse_friends, :through => :inverse_friendships, :source => :user
+  has_secure_password
+  validates :email, uniqueness: { case_sensitive: false }
+  attr_accessor :password
 
   has_many :messages
 	has_many :subscriptions
 	has_many :chats, through: :subscriptions
   has_many :created_chat, :class_name => "Chat", :foreign_key => "creator_id"
+
+  def authenticate(plaintext_password)
+    if BCrypt::Password.new(self.password_digest) == plaintext_password
+      self
+    else
+      false
+    end
+  end
+
 
 end
 
