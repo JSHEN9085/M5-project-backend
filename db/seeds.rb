@@ -53,13 +53,13 @@ require 'rubygems'
 require 'httparty'
 ##for google map, use leaflet https://leafletjs.com/
 # response = HTTParty.get('https://randomuser.me/api/?results=5')
-#
+# #
 # response["results"].each do |user|
 #   User.create!(
 #     firstname: user["name"]["first"].capitalize,
 #     lastname: user["name"]["last"].capitalize,
 #     email: user["email"],
-#     password_digest: "1",
+#     password: "1",
 #     large_picture: user["picture"]["large"],
 #     medium_picture: user["picture"]["medium"],
 #     small_picture: user["picture"]["thumbnail"],
@@ -67,3 +67,5 @@ require 'httparty'
 #     state_location: user["location"]["state"]
 #   )
 # end
+
+# carmen.gallardo@example.com
