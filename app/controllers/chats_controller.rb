@@ -5,6 +5,11 @@ class ChatsController < ApplicationController
     render json: @chats
   end
 
+  def show
+    @chat = Chat.find(params[:id])
+    render json: @chat
+  end
+
   def create
     @chat = Chat.new(chat_params)
     if @chat.save

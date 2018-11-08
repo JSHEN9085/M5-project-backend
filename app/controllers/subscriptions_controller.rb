@@ -1,6 +1,7 @@
 class SubscriptionsController < ApplicationController
   def index
-    @subscriptions = Subscription.all
+    @chat = Chat.find(params[:chat_id])
+    @subscriptions = Subscription.all.where(chat_id: @chat.id)
     render json: @subscriptions
   end
 
@@ -15,6 +16,19 @@ class SubscriptionsController < ApplicationController
       SubscriptionsChannel.broadcast_to @chat, serialized_data
       head :ok
     end
+  end
+
+  def destroy
+    @chat = Chat.find(params[:chat_id])
+    @user = User.find(params[:user_id])
+    @subscriptions = @chat.subscriptions
+    @subscription = @subscriptions.where(user_id: params[:user_id])
+    @subscription.destroy_all
+    serialized_data = ActiveModelSerializers::Adapter::Json.new(
+      UserSerializer.new(@user)
+    ).serializable_hash
+    SubscriptionsChannel.broadcast_to @chat, serialized_data
+    head :ok
   end
 
 private
