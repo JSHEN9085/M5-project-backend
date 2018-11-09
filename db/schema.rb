@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2018_10_31_155422) do
 
   create_table "chats", force: :cascade do |t|
     t.string "topic"
+    t.string "description"
     t.integer "creator_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -45,8 +46,6 @@ ActiveRecord::Schema.define(version: 2018_10_31_155422) do
     t.string "large_picture"
     t.string "medium_picture"
     t.string "small_picture"
-    t.string "city_location"
-    t.string "state_location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

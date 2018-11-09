@@ -8,8 +8,6 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :large_picture
       t.string :medium_picture
       t.string :small_picture
-      t.string :city_location
-      t.string :state_location
 
       t.timestamps
     end

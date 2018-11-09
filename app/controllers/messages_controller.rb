@@ -1,4 +1,11 @@
 class MessagesController < ApplicationController
+
+  def index
+    @chat = Chat.find(params[:chat_id])
+    @messages = @chat.messages
+    render json: @messages
+  end
+
   def create
     @message = Message.new(message_params)
     @chat = Chat.find(message_params[:chat_id])
@@ -9,6 +16,11 @@ class MessagesController < ApplicationController
       MessagesChannel.broadcast_to @chat, serialized_data
       head :ok
     end
+  end
+
+  def destroy
+    @message = Message.find(params[:id])
+    @message.destroy
   end
 
 private
