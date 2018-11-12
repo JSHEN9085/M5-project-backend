@@ -15,18 +15,18 @@
 
 ##friend has to be bi-direction, otherwise friend can't find the user
 
-Message.create!(content: "Hello", user_id: 1, chat_id:1)
-Message.create!(content: "Hello", user_id: 1, chat_id:2)
-Message.create!(content: "Hello", user_id: 1, chat_id:3)
-Message.create!(content: "Hello2", user_id: 2, chat_id:1)
-Message.create!(content: "Hello2", user_id: 2, chat_id:2)
-Message.create!(content: "Hello2", user_id: 2, chat_id:3)
-Message.create!(content: "Hello4", user_id: 4, chat_id:3)
-Message.create!(content: "Hello5", user_id: 5, chat_id:3)
-Message.create!(content: "testing", user_id: 5, chat_id:1)
-Message.create!(content: "testing", user_id: 5, chat_id:1)
-Message.create!(content: "testing", user_id: 5, chat_id:1)
-Message.create!(content: "testing", user_id: 5, chat_id:1)
+# Message.create!(content: "Hello", user_id: 1, chat_id:1)
+# Message.create!(content: "Hello", user_id: 1, chat_id:2)
+# Message.create!(content: "Hello", user_id: 1, chat_id:3)
+# Message.create!(content: "Hello2", user_id: 2, chat_id:1)
+# Message.create!(content: "Hello2", user_id: 2, chat_id:2)
+# Message.create!(content: "Hello2", user_id: 2, chat_id:3)
+# Message.create!(content: "Hello4", user_id: 4, chat_id:3)
+# Message.create!(content: "Hello5", user_id: 5, chat_id:3)
+# Message.create!(content: "testing", user_id: 5, chat_id:1)
+# Message.create!(content: "testing", user_id: 5, chat_id:1)
+# Message.create!(content: "testing", user_id: 5, chat_id:1)
+# Message.create!(content: "testing", user_id: 5, chat_id:1)
 # Message.create!(content: "testing", user_id: 1, chat_id:15)
 # Message.create!(content: "testing", user_id: 2, chat_id:15)
 # Message.create!(content: "testing", user_id: 1, chat_id:15)
@@ -52,7 +52,7 @@ Message.create!(content: "testing", user_id: 5, chat_id:1)
 require 'rubygems'
 require 'httparty'
 ##for google map, use leaflet https://leafletjs.com/
-# response = HTTParty.get('https://randomuser.me/api/?results=5')
+# response = HTTParty.get('https://randomuser.me/api/?results=100')
 #
 # response["results"].each do |user|
 #   User.create!(
@@ -63,5 +63,19 @@ require 'httparty'
 #     large_picture: user["picture"]["large"],
 #     small_picture: user["picture"]["thumbnail"],
 #     medium_picture: user["picture"]["medium"],
+#   )
+# end
+
+
+
+
+# response = HTTParty.get('http://localhost:4000/posts')
+#
+# filter_response = response.select{|post| post["title"] != ""}
+#
+# filter_response.each do |post|
+#   Chat.create!(
+#     topic: post["title"],
+#     creator_id: rand(1..100)
 #   )
 # end

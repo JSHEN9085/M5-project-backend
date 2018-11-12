@@ -27,12 +27,9 @@ private
       :firstname,
       :lastname,
       :email,
-      :password_digest,
+      :password,
       :large_picture,
-      :medium_picture,
-      :small_picture,
-      :city_location,
-      :state_location
+      :small_picture
     )
   end
 
