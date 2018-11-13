@@ -6,12 +6,21 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# User.create!(username: "Jun")
-# User.create!(username: "user1")
-# User.create!(username: "user2")
-# User.create!(username: "user3")
-# User.create!(username: "user4")
-# User.create!(username: "user5")
+  User.create!(
+    firstname: "Jun",
+    lastname: "Shen",
+    email: "jshen9085@gmail.com",
+    password: "123",
+    small_picture: "https://res.cloudinary.com/jshen9085/image/upload/v1542141280/Jun.jpg"
+  )
+
+  User.create!(
+    firstname: "Super Guest",
+    lastname: "Flatiron",
+    email: "guest@flatiron.com",
+    password: "123",
+    small_picture: "https://res.cloudinary.com/jshen9085/image/upload/v1542141211/super.jpg"
+  )
 
 ##friend has to be bi-direction, otherwise friend can't find the user
 
