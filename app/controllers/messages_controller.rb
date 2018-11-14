@@ -20,6 +20,12 @@ class MessagesController < ApplicationController
 
   def destroy
     @message = Message.find(params[:id])
+    @chat = Chat.find(params[:chat_id].to_i)
+    serialized_data = ActiveModelSerializers::Adapter::Json.new(
+      MessageSerializer.new(@message)
+    ).serializable_hash
+    MessagesChannel.broadcast_to @chat, serialized_data
+    head :ok
     @message.destroy
   end
 

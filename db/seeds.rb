@@ -15,8 +15,8 @@
   )
 
   User.create!(
-    firstname: "Super Guest",
-    lastname: "Flatiron",
+    firstname: "Super",
+    lastname: "Guest",
     email: "guest@flatiron.com",
     password: "123",
     small_picture: "https://res.cloudinary.com/jshen9085/image/upload/v1542141211/super.jpg"
