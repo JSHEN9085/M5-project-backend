@@ -6,21 +6,21 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-  User.create!(
-    firstname: "Jun",
-    lastname: "Shen",
-    email: "jshen9085@gmail.com",
-    password: "123",
-    small_picture: "https://res.cloudinary.com/jshen9085/image/upload/v1542141280/Jun.jpg"
-  )
-
-  User.create!(
-    firstname: "Super",
-    lastname: "Guest",
-    email: "guest@flatiron.com",
-    password: "123",
-    small_picture: "https://res.cloudinary.com/jshen9085/image/upload/v1542141211/super.jpg"
-  )
+  # User.create!(
+  #   firstname: "Jun Jian",
+  #   lastname: "Shen",
+  #   email: "jshen9085@gmail.com",
+  #   password: "123",
+  #   small_picture: "https://res.cloudinary.com/jshen9085/image/upload/v1542141280/Jun.jpg"
+  # )
+  #
+  # User.create!(
+  #   firstname: "Super Guest",
+  #   lastname: "",
+  #   email: "guest@flatiron.com",
+  #   password: "123",
+  #   small_picture: "https://res.cloudinary.com/jshen9085/image/upload/v1542141211/super.jpg"
+  # )
 
 ##friend has to be bi-direction, otherwise friend can't find the user
 
@@ -61,14 +61,14 @@
 require 'rubygems'
 require 'httparty'
 ##for google map, use leaflet https://leafletjs.com/
-# response = HTTParty.get('https://randomuser.me/api/?results=100')
+# response = HTTParty.get('https://randomuser.me/api/?results=50')
 #
 # response["results"].each do |user|
 #   User.create!(
 #     firstname: user["name"]["first"].capitalize,
 #     lastname: user["name"]["last"].capitalize,
 #     email: user["email"],
-#     password: "1",
+#     password: "123",
 #     large_picture: user["picture"]["large"],
 #     small_picture: user["picture"]["thumbnail"],
 #     medium_picture: user["picture"]["medium"],
@@ -77,7 +77,7 @@ require 'httparty'
 
 
 
-
+# 
 # response = HTTParty.get('http://localhost:4000/posts')
 #
 # filter_response = response.select{|post| post["title"] != ""}
@@ -85,6 +85,6 @@ require 'httparty'
 # filter_response.each do |post|
 #   Chat.create!(
 #     topic: post["title"],
-#     creator_id: rand(1..100)
+#     creator_id: rand(1..50)
 #   )
 # end
