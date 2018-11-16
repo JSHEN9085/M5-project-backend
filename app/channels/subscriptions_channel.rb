@@ -4,7 +4,4 @@ class SubscriptionsChannel < ApplicationCable::Channel
     stream_for chat
   end
 
-  def unsubscribed
-    # Any cleanup needed when channel is unsubscribed
-  end
 end
